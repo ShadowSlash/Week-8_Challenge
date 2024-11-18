@@ -1,17 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Order Form</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container">
+{% extends "ecom_store/base.html" %}
+
+{% block title %}Order Form{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
         <h1>{% if form.instance.pk %}Edit{% else %}New{% endif %} Order</h1>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">{% if form.instance.pk %}Update{% else %}Create{% endif %}</button>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="customerName">Customer Name:</label>
+                    {{ form.customer_name }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="orderDate">Order Date:</label>
+                    {{ form.order_date }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="productName">Product Name:</label>
+                    {{ form.product_name }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="quantity">Quantity:</label>
+                    {{ form.quantity }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notes">Additional Notes:</label>
+                <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">{% if form.instance.pk %}Update{% else %}Create{% endif %}</button>
+                <a href="{% url 'ecom_store:order_list' %}" class="btn btn-secondary">Cancel</a>
+            </div>
         </form>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

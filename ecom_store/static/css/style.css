@@ -1,0 +1,47 @@
+body {
+    background-color: #dbdbdb; 
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0.2, 0.5);
+    background-color: #E9ECEF; 
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.table th {
+    text-align: center;
+}
+
+.table td {
+    text-align: center;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+html, body { 
+    height: 100%; 
+} 
+
+.footer { 
+    margin-top: auto; 
+    background-color: #E9ECEF;
+    color: #212529;
+}
+.mcl {
+    color: #212529;
+}
+.bcl { 
+    background-color: #E9ECEF;
+}

@@ -4,6 +4,10 @@ from .forms import OrderForm
 
 #Create your views here.
 
+# Homepage
+def home(request): 
+    return render(request, 'ecom_store/homepage.html')
+
 # Order list
 def order_list(request): 
     orders = Orders.objects.all()
